@@ -149,6 +149,20 @@ struct WelcomeView: View {
         Toggle(L.s("settings.followUp"), isOn: $settings.followUpEnabled)
             .toggleStyle(.checkbox)
 
+        Divider()
+            .padding(.vertical, 2)
+
+        // First-run sound question: some people want the takeover silent.
+        HStack(spacing: 12) {
+            Toggle(L.s("settings.sound.enable"), isOn: $settings.soundEnabled)
+                .toggleStyle(.checkbox)
+            Button(L.s("settings.sound.preview")) {
+                app.sound.playOnce(name: settings.soundName)
+            }
+            .controlSize(.small)
+            .disabled(!settings.soundEnabled)
+        }
+
         Text(L.s("setup.stages.hint"))
             .font(.callout)
             .foregroundStyle(.secondary)
