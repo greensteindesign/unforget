@@ -1,0 +1,32 @@
+# Build artifacts
+build/
+DerivedData/
+*.xcarchive
+
+# The Xcode project is generated from project.yml (xcodegen)
+*.xcodeproj
+xcuserdata/
+
+# macOS
+.DS_Store
+
+# Old website backup (not part of the product)
+website-v1-backup/
+
+# Secrets — never check in
+*.p8
+*.mobileprovision
+*.provisionprofile
+.env
+
+# Not part of the public repo: only the bare app gets published
+website/
+appstore-screenshots/
+scripts/
+exportOptions.plist
+design_guidelines.json
+KONZEPT.md
+DESIGN.md
+PRODUCT.md
+ROADMAP.md
+STORE-LISTING.md

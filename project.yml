@@ -1,0 +1,44 @@
+name: Unforget
+options:
+  bundleIdPrefix: design.greenstein
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    DEVELOPMENT_TEAM: 9N2XS7N8T4
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: 1.0.1
+    CURRENT_PROJECT_VERSION: 5
+    ENABLE_HARDENED_RUNTIME: NO
+    GENERATE_INFOPLIST_FILE: NO
+targets:
+  Unforget:
+    type: application
+    platform: macOS
+    sources:
+      - Unforget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: design.greenstein.unforget
+        PRODUCT_NAME: Unforget
+    entitlements:
+      path: Unforget/Unforget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.personal-information.calendars: true
+    info:
+      path: Unforget/Info.plist
+      properties:
+        CFBundleDisplayName: Unforget
+        CFBundleIconFile: AppIcon
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, de, es]
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.productivity
+        NSCalendarsFullAccessUsageDescription: Unforget reads your calendar to remind you of events in time — unmissably. Nothing ever leaves your Mac.
+        NSHumanReadableCopyright: © 2026 Greenstein Designagentur
+        ITSAppUsesNonExemptEncryption: false
